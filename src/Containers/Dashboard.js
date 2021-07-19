@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import InputSection from "../Components/InputSection";
+import InputArea from "../Components/InputArea";
 import WeeklyGraph from "../Components/WeeklyGraph";
 import Records from "./Records";
 
@@ -22,14 +22,33 @@ const GraphContainer = styled.div`
 `;
 
 export default function Dashboard() {
+    const [bmi, setBmi] = useState(0);
+    const [bmiRecords, setBmiRecords] = useState([]);
+
+    const updateBMI = (newBmi) => {
+        setBmi(newBmi);
+    };
+
+    const formatDate = (date) => {
+        const options = { year: "numeric", month: "short", day: "numeric" };
+        return date.toLocaleDateString("en-US", options);
+    };
+
+    useEffect(() => {
+        setBmiRecords([
+            ...bmiRecords,
+            { name: formatDate(new Date()), uv: bmi },
+        ]);
+    }, [bmi]);
+
     return (
         <StyledMain>
             <StyledHeader>
                 <h1>BMI Tracker</h1>
             </StyledHeader>
-            <InputSection />
+            <InputArea setOutput={updateBMI} />
             <GraphContainer>
-                <WeeklyGraph />
+                <WeeklyGraph data={bmiRecords} />
             </GraphContainer>
             <Records />
         </StyledMain>
