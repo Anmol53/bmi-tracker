@@ -92,11 +92,12 @@ const LabelAndRange = styled.div`
     display: flex;
     justify-content: space-between;
 `;
-export default function RangeSlider({ label, min, max, unit, onBlur }) {
+export default function RangeSlider({ label, min, max, unit, onChange }) {
     const [value, setValue] = useState(min);
 
     const updateValue = (e) => {
         setValue(e.target.value);
+        onChange(e);
     };
 
     return (
@@ -114,7 +115,6 @@ export default function RangeSlider({ label, min, max, unit, onBlur }) {
                     min={min}
                     max={max}
                     value={value}
-                    onBlur={onBlur}
                 />
             </Slider>
             <LabelAndRange>
@@ -127,7 +127,7 @@ export default function RangeSlider({ label, min, max, unit, onBlur }) {
 }
 
 RangeSlider.propTypes = {
-    onBlur: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
     label: PropTypes.string.isRequired,
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,

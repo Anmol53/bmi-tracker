@@ -21,36 +21,59 @@ const GraphContainer = styled.div`
     place-items: center;
 `;
 
+// Get BMI Records from Local Storage
+const getLocalItmes = () => {
+    const bmiRecords = localStorage.getItem("bmiRecords");
+
+    if (bmiRecords) {
+        return JSON.parse(bmiRecords);
+    }
+    return [];
+};
+
+// Format date in "Mmm dd, yyyy" format
+const formatDate = (date) => {
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+};
+
 export default function Dashboard() {
-    const [bmi, setBmi] = useState(0);
-    const [bmiRecords, setBmiRecords] = useState([]);
+    const [bmiRecords, setBmiRecords] = useState(getLocalItmes());
 
-    const updateBMI = (newBmi) => {
-        setBmi(newBmi);
+    const addNewRecord = ({ weight, height }) => {
+        // Calculate BMI
+        const newBmi = Math.round(
+            ((weight / ((height / 100) * (height / 100))) * 100) / 100
+        );
+        // Remove today's old record if already measured today and add new record
+        const newBMIRecords = [
+            ...bmiRecords.filter((e) => e.name !== formatDate(new Date())),
+            { name: formatDate(new Date()), uv: newBmi, weight, height },
+        ];
+        // Sort data acording to date
+        newBMIRecords.sort(
+            (e1, e2) =>
+                new Date(e1.name).valueOf() - new Date(e2.name).valueOf()
+        );
+        // Keep only last 7 days data
+        setBmiRecords([...newBMIRecords.slice(-7)]);
     };
 
-    const formatDate = (date) => {
-        const options = { year: "numeric", month: "short", day: "numeric" };
-        return date.toLocaleDateString("en-US", options);
-    };
-
+    // Update BMI Records in Local Storage
     useEffect(() => {
-        setBmiRecords([
-            ...bmiRecords,
-            { name: formatDate(new Date()), uv: bmi },
-        ]);
-    }, [bmi]);
+        localStorage.setItem("bmiRecords", JSON.stringify(bmiRecords));
+    }, [bmiRecords]);
 
     return (
         <StyledMain>
             <StyledHeader>
                 <h1>BMI Tracker</h1>
             </StyledHeader>
-            <InputArea setOutput={updateBMI} />
+            <InputArea setOutput={addNewRecord} />
             <GraphContainer>
                 <WeeklyGraph data={bmiRecords} />
             </GraphContainer>
-            <Records />
+            <Records data={bmiRecords} />
         </StyledMain>
     );
 }

@@ -41,8 +41,8 @@ const StyledButton = styled.button`
 `;
 
 export default function InputArea({ setOutput }) {
-    const [weight, setWeight] = useState(0);
-    const [height, setHeight] = useState(0);
+    const [weight, setWeight] = useState(1);
+    const [height, setHeight] = useState(50);
 
     const updateHeight = (e) => {
         const newHeight = e.target.value;
@@ -53,8 +53,7 @@ export default function InputArea({ setOutput }) {
         setWeight(newWeight);
     };
     const calculateBMI = () => {
-        const bmi = (weight * 100 * 100) / (height * height);
-        setOutput(bmi);
+        setOutput({ weight, height });
     };
 
     return (
@@ -65,14 +64,14 @@ export default function InputArea({ setOutput }) {
                     min={1}
                     max={150}
                     unit="KG"
-                    onBlur={updateWeight}
+                    onChange={updateWeight}
                 />
                 <RangeSlider
                     label="Height"
                     min={50}
                     max={250}
                     unit="cm"
-                    onBlur={updateHeight}
+                    onChange={updateHeight}
                 />
             </Sliders>
             <ButtonContainer>
