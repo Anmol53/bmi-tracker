@@ -55,7 +55,7 @@ export default function InputArea({ setOutput }) {
         setWeight(newWeight);
     };
     const calculateBMI = () => {
-        setOutput({ weight, height });
+        setOutput({ weight: Number(weight), height: Number(height) });
     };
 
     return (
