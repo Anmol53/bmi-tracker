@@ -37,18 +37,39 @@ const formatDate = (date) => {
     return date.toLocaleDateString("en-US", options);
 };
 
+// Return bmi status
+const getBmiStatus = (bmi) => {
+    let status = "";
+    if (bmi < 18.5) {
+        status = "Underweight";
+    } else if (bmi >= 18.5 && bmi < 25) {
+        status = "Normal";
+    } else if (bmi >= 25 && bmi < 30) {
+        status = "Overweight";
+    } else {
+        status = "Obese";
+    }
+    return status;
+};
+
 export default function Dashboard() {
     const [bmiRecords, setBmiRecords] = useState(getLocalItmes());
 
     const addNewRecord = ({ weight, height }) => {
         // Calculate BMI
-        const newBmi = Math.round(
-            ((weight / ((height / 100) * (height / 100))) * 100) / 100
-        );
+        const newBmi =
+            Math.round((weight / ((height / 100) * (height / 100))) * 100) /
+            100;
         // Remove today's old record if already measured today and add new record
         const newBMIRecords = [
             ...bmiRecords.filter((e) => e.name !== formatDate(new Date())),
-            { name: formatDate(new Date()), uv: newBmi, weight, height },
+            {
+                name: formatDate(new Date()),
+                uv: newBmi,
+                weight,
+                height,
+                status: getBmiStatus(newBmi),
+            },
         ];
         // Sort data acording to date
         newBMIRecords.sort(

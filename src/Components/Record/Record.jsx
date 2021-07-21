@@ -19,8 +19,8 @@ const StyledCard = styled.div`
         box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
             -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
     }
-    h2,
-    h3 {
+    h3,
+    h4 {
         font-size: 0.9rem;
         margin: 0.1rem 0px;
     }
@@ -30,15 +30,17 @@ export default function Record({ data }) {
     return (
         <StyledCard>
             <h1>{`BMI: ${data.uv}`}</h1>
-            <h2>{`Weight: ${data.weight} KG`}</h2>
-            <h2>{`Height: ${data.height} cm`}</h2>
-            <h3>{`Recorded on: ${data.name}`}</h3>
+            <h2>{data.status}</h2>
+            <h3>{`Weight: ${data.weight} KG`}</h3>
+            <h3>{`Height: ${data.height} cm`}</h3>
+            <h4>{`Recorded on: ${data.name}`}</h4>
         </StyledCard>
     );
 }
 Record.propTypes = {
     data: PropTypes.shape({
         name: PropTypes.string,
+        status: PropTypes.string,
         uv: PropTypes.number,
         weight: PropTypes.number,
         height: PropTypes.number,
