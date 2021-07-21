@@ -50,10 +50,12 @@ export default function InputArea({ setOutput }) {
         const newHeight = e.target.value;
         setHeight(newHeight);
     };
+
     const updateWeight = (e) => {
         const newWeight = e.target.value;
         setWeight(newWeight);
     };
+
     const calculateBMI = () => {
         setOutput({ weight: Number(weight), height: Number(height) });
     };
