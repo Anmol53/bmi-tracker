@@ -94,7 +94,7 @@ export default function Dashboard() {
             <GraphContainer>
                 <WeeklyGraph data={bmiRecords} />
             </GraphContainer>
-            <Records data={bmiRecords} />
+            <Records data={[...bmiRecords].reverse()} />
         </StyledMain>
     );
 }
