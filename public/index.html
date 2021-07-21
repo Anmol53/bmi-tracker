@@ -10,7 +10,7 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -33,10 +33,15 @@
         }
 
         body {
-            background-color: #142850;
-            color: #0C7B93;
-            /* font-family: 'Lato', sans-serif; */
-            font-family: 'Roboto', sans-serif;
+
+            /* fallback for old browsers */
+            background: #42275a;
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to left, #734b6d, #42275a);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to left, #734b6d, #42275a);
+            color: #ffffff;
+            font-family: 'Lato', sans-serif;
             overflow-x: hidden;
         }
 
@@ -58,6 +63,14 @@
                     #87556f);
             outline: 1px solid slategrey;
             border-radius: 60px;
+        }
+
+        input,
+        textarea,
+        button,
+        select,
+        a {
+            -webkit-tap-highlight-color: transparent;
         }
 
     </style>

@@ -17,11 +17,10 @@ const Sliders = styled.div`
 const ButtonContainer = styled.div`
     display: grid;
     place-items: center;
-    // background-color: red;
 `;
 
 const StyledButton = styled.button`
-    background-color: #142850;
+    background-color: rgba(0, 0, 0, 0);
     outline: none;
     border: none;
     padding: 0.5rem 2rem;

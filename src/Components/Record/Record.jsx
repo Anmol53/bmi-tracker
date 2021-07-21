@@ -5,8 +5,8 @@ import styled from "styled-components";
 const StyledCard = styled.div`
     background: linear-gradient(
         210deg,
-        rgba(224, 224, 224, 0.1) 0,
-        rgba(36, 34, 34, 0.01) 97%
+        rgba(224, 224, 224, 0.3) 0,
+        rgba(36, 34, 34, 0.1) 70%
     );
     padding: 1rem;
     box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25),

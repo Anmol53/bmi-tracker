@@ -6,7 +6,7 @@ import Records from "./Records";
 
 const StyledMain = styled.main`
     width: 100vw;
-    min-height: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
 `;
 

@@ -24,7 +24,6 @@ const ChoosenValue = styled.span`
     border-radius: 50%;
     text-align: center;
     border: 2px solid #ffffff;
-    color: #ffffff;
     font-size: 1.5rem;
     p {
         font-size: 1rem;
@@ -40,7 +39,7 @@ const SliderInput = styled.input`
     }
     &::-webkit-slider-runnable-track {
         width: 100%;
-        height: 1px;
+        height: 2px;
         cursor: pointer;
         box-shadow: none;
         background: #ffffff;
@@ -49,7 +48,7 @@ const SliderInput = styled.input`
     }
     &::-moz-range-track {
         width: 100%;
-        height: 1px;
+        height: 2px;
         cursor: pointer;
         box-shadow: none;
         background: #ffffff;
