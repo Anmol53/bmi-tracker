@@ -25,18 +25,20 @@ const StyledButton = styled.button`
     outline: none;
     border: none;
     padding: 0.5rem 2rem;
-    box-shadow: 0px 3px #27496d, 0 0 10px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     text-align: center;
     text-transform: uppercase;
-    transition: 0.2s all;
+    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.25),
+        -1px -1px 6px 2px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
     color: white;
-    &:hover {
-        // background-color: #27496d;
-    }
+    transform: scale(1.1, 1.1);
+
     &:active {
-        box-shadow: 0 0px #27496d;
-        transform: translate(0px, 2px);
+        transform: scale(1, 1);
+        box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.25),
+            -1px -1px 6px 3px rgba(0, 0, 0, 0.22);
     }
 `;
 
