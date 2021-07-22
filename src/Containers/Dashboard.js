@@ -23,6 +23,7 @@ const GraphContainer = styled.div`
 `;
 
 const Toast = styled.div`
+    top: 0px;
     margin: 1rem 50%;
     position: absolute;
     transform: translate(-50%, -120%);
@@ -105,17 +106,21 @@ export default function Dashboard() {
 
     return (
         <StyledMain>
-            <Toast style={showToast}>
-                <Record data={bmiRecords[bmiRecords.length - 1]} />
-            </Toast>
             <StyledHeader>
                 <h1>BMI Tracker</h1>
             </StyledHeader>
             <InputArea setOutput={addNewRecord} />
-            <GraphContainer>
-                <WeeklyGraph data={bmiRecords} />
-            </GraphContainer>
-            <Records data={[...bmiRecords].reverse()} />
+            {bmiRecords.length > 0 && (
+                <>
+                    <Toast style={showToast}>
+                        <Record data={bmiRecords[bmiRecords.length - 1]} />
+                    </Toast>
+                    <GraphContainer>
+                        <WeeklyGraph data={bmiRecords} />
+                    </GraphContainer>
+                    <Records data={[...bmiRecords].reverse()} />
+                </>
+            )}
         </StyledMain>
     );
 }
