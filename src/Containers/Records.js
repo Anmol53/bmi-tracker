@@ -34,8 +34,8 @@ export default function Records({ data }) {
                 <h1>Last Records</h1>
             </StyledHeader>
             <CardsContainer>
-                {data.map((ele) => (
-                    <li>
+                {data.map((ele, idx) => (
+                    <li key={`${idx * Math.random()}_${ele.date}_${ele.bmi}`}>
                         <Record data={ele} />
                     </li>
                 ))}
