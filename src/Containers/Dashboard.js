@@ -28,7 +28,7 @@ const Toast = styled.div`
     transform: translate(-50%, -120%);
     min-width: 350px;
     border-radius: 20px;
-    background-color: #87556f;
+    background-color: #5e3c65;
     transition: 0.5s;
 `;
 
