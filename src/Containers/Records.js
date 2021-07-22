@@ -5,7 +5,7 @@ import Record from "../Components/Record";
 
 const RecordsContainer = styled.div`
     margin: 5rem auto;
-    max-width: 1080px;
+    max-width: 1200px;
     padding: 1rem;
 `;
 
@@ -17,9 +17,14 @@ const StyledHeader = styled.header`
 const CardsContainer = styled.ul`
     list-style: none;
     margin: 2rem 0;
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    li {
+        flex: 0 1 350px;
+    }
+    gap: 1rem;
 `;
 
 export default function Records({ data }) {
