@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import InputArea from "../Components/InputArea";
+import Record from "../Components/Record";
 import WeeklyGraph from "../Components/WeeklyGraph";
 import Records from "./Records";
 
@@ -20,6 +21,20 @@ const GraphContainer = styled.div`
     display: grid;
     place-items: center;
 `;
+
+const Toast = styled.div`
+    margin: 1rem 50%;
+    position: absolute;
+    transform: translate(-50%, -120%);
+    min-width: 350px;
+    border-radius: 20px;
+    background-color: #87556f;
+    transition: 0.5s;
+`;
+
+const toastON = {
+    transform: "translate(-50%, 0%)",
+};
 
 // Get BMI Records from Local Storage
 const getLocalItmes = () => {
@@ -54,6 +69,7 @@ const getBmiStatus = (bmi) => {
 
 export default function Dashboard() {
     const [bmiRecords, setBmiRecords] = useState(getLocalItmes());
+    const [showToast, setShowToast] = useState({});
 
     const addNewRecord = ({ weight, height }) => {
         // Calculate BMI
@@ -78,6 +94,8 @@ export default function Dashboard() {
         );
         // Keep only last 7 days data
         setBmiRecords([...newBMIRecords.slice(-7)]);
+        setShowToast(toastON);
+        setTimeout(() => setShowToast({}), 3 * 1000);
     };
 
     // Update BMI Records in Local Storage
@@ -87,6 +105,9 @@ export default function Dashboard() {
 
     return (
         <StyledMain>
+            <Toast style={showToast}>
+                <Record data={bmiRecords[bmiRecords.length - 1]} />
+            </Toast>
             <StyledHeader>
                 <h1>BMI Tracker</h1>
             </StyledHeader>
