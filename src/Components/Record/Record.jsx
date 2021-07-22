@@ -92,7 +92,7 @@ export default function Record({ data }) {
     return (
         <StyledCard>
             <DateSpan>
-                {data.name === formatDate(new Date()) ? "Today" : data.name}
+                {data.date === formatDate(new Date()) ? "Today" : data.date}
             </DateSpan>
             <Content>
                 <h1>{data.status}</h1>
@@ -103,16 +103,16 @@ export default function Record({ data }) {
                 </div>
             </Content>
             <StyledBMI>
-                <p>{data.uv}</p>
+                <p>{data.bmi}</p>
             </StyledBMI>
         </StyledCard>
     );
 }
 Record.propTypes = {
     data: PropTypes.shape({
-        name: PropTypes.string,
+        date: PropTypes.string,
         status: PropTypes.string,
-        uv: PropTypes.number,
+        bmi: PropTypes.number,
         weight: PropTypes.number,
         height: PropTypes.number,
     }).isRequired,

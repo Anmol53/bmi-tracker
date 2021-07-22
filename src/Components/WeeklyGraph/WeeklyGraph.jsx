@@ -32,12 +32,35 @@ export default function WeeklyGraph({ data }) {
                         bottom: 0,
                     }}
                 >
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
+                    <XAxis dataKey="date" stroke="#ffffff" />
+                    <YAxis stroke="#ffffff" />
+                    <Tooltip
+                        content={({ payload, label }) => (
+                            <div
+                                style={{
+                                    background: "#fff",
+                                    padding: "10px",
+                                    border: "1px solid #ccc",
+                                    borderRadius: "4px",
+                                    color: "#8884d8",
+                                    textTransform: "uppercase",
+                                }}
+                            >
+                                <p>{label}</p>
+                                {payload.length &&
+                                    payload.map(({ name, value }, idx) => (
+                                        <p
+                                            key={`${
+                                                idx * Math.random()
+                                            }_${name}_${value}`}
+                                        >{`${name}: ${value}`}</p>
+                                    ))}
+                            </div>
+                        )}
+                    />
                     <Area
                         type="monotone"
-                        dataKey="uv"
+                        dataKey="bmi"
                         stroke="#8884d8"
                         fill="#8884d8"
                     />

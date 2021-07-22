@@ -79,10 +79,10 @@ export default function Dashboard() {
             100;
         // Remove today's old record if already measured today and add new record
         const newBMIRecords = [
-            ...bmiRecords.filter((e) => e.name !== formatDate(new Date())),
+            ...bmiRecords.filter((e) => e.date !== formatDate(new Date())),
             {
-                name: formatDate(new Date()),
-                uv: newBmi,
+                date: formatDate(new Date()),
+                bmi: newBmi,
                 weight,
                 height,
                 status: getBmiStatus(newBmi),
