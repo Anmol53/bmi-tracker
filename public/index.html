@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="./favicon/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="title" content="BMI Tracker - Calculate and Track Your BMI Online">
@@ -13,11 +13,11 @@
     <meta name="author" content="Anmol Agrawal, anmol.ag53@gmail.com">
     <title>BMI Tracker</title>
 
-    <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="manifest" href="./manifest.json" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <style>
         * {
             padding: 0;
@@ -71,6 +71,16 @@
 <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('%PUBLIC_URL%/serviceworker.js')
+                    .then((reg) => console.log('Success: ', reg.scope))
+                    .catch((err) => console.log('Failure: ', err));
+            })
+        }
+
+    </script>
 </body>
 
 </html>
