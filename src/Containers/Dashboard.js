@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import FAB from "../Components/FAB";
 import InputArea from "../Components/InputArea";
 import Record from "../Components/Record";
 import WeeklyGraph from "../Components/WeeklyGraph";
@@ -121,6 +122,7 @@ export default function Dashboard() {
                     <Records data={[...bmiRecords].reverse()} />
                 </>
             )}
+            <FAB />
         </StyledMain>
     );
 }
