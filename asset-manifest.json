@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/bmi-tracker/static/js/main.59df782f.chunk.js",
-    "main.js.map": "/bmi-tracker/static/js/main.59df782f.chunk.js.map",
+    "main.js": "/bmi-tracker/static/js/main.1dafddad.chunk.js",
+    "main.js.map": "/bmi-tracker/static/js/main.1dafddad.chunk.js.map",
     "runtime-main.js": "/bmi-tracker/static/js/runtime-main.68fd035d.js",
     "runtime-main.js.map": "/bmi-tracker/static/js/runtime-main.68fd035d.js.map",
-    "static/js/2.8c4c28c2.chunk.js": "/bmi-tracker/static/js/2.8c4c28c2.chunk.js",
-    "static/js/2.8c4c28c2.chunk.js.map": "/bmi-tracker/static/js/2.8c4c28c2.chunk.js.map",
+    "static/js/2.f58d1483.chunk.js": "/bmi-tracker/static/js/2.f58d1483.chunk.js",
+    "static/js/2.f58d1483.chunk.js.map": "/bmi-tracker/static/js/2.f58d1483.chunk.js.map",
     "index.html": "/bmi-tracker/index.html",
-    "static/js/2.8c4c28c2.chunk.js.LICENSE.txt": "/bmi-tracker/static/js/2.8c4c28c2.chunk.js.LICENSE.txt"
+    "static/js/2.f58d1483.chunk.js.LICENSE.txt": "/bmi-tracker/static/js/2.f58d1483.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.68fd035d.js",
-    "static/js/2.8c4c28c2.chunk.js",
-    "static/js/main.59df782f.chunk.js"
+    "static/js/2.f58d1483.chunk.js",
+    "static/js/main.1dafddad.chunk.js"
   ]
 }
