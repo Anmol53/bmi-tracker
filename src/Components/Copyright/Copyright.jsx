@@ -10,6 +10,7 @@ const CopyrightContainer = styled.div`
     color: rgb(130, 130, 130);
     line-height: 2rem;
     font-size: 0.9rem;
+    box-sizing: border-box;
     padding: 0.5rem;
     a {
         text-decoration: none;
