@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/bmi-tracker/static/js/main.b4883863.chunk.js",
-    "main.js.map": "/bmi-tracker/static/js/main.b4883863.chunk.js.map",
+    "main.js": "/bmi-tracker/static/js/main.e1445809.chunk.js",
+    "main.js.map": "/bmi-tracker/static/js/main.e1445809.chunk.js.map",
     "runtime-main.js": "/bmi-tracker/static/js/runtime-main.68fd035d.js",
     "runtime-main.js.map": "/bmi-tracker/static/js/runtime-main.68fd035d.js.map",
     "static/js/2.f58d1483.chunk.js": "/bmi-tracker/static/js/2.f58d1483.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.68fd035d.js",
     "static/js/2.f58d1483.chunk.js",
-    "static/js/main.b4883863.chunk.js"
+    "static/js/main.e1445809.chunk.js"
   ]
 }
