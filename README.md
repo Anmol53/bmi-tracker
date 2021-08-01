@@ -4,6 +4,8 @@ A `Progressive Web Application (PWA)` where users can calculate and keep track o
 
 This app is installable as a native app for Windows, Android, iOS, MacOS, Chrome OS. This web app will also work `offline`.
 
+Hosted Link: [BMI Tracker](https://anmolagrawal.tech/bmi-tracker/)
+
 ## Screenshots
 
 ### Desktop Site
