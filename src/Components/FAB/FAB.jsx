@@ -55,17 +55,16 @@ export default function FAB() {
         <FABContainer>
             {fabContentVisible && (
                 <Message>
-                    {" "}
                     <ul>
                         <li>You can store records for 7 days.</li>
                         <li>
                             For a particular day, only the latest record of the
                             day will be stored.
                         </li>
-                    </ul>{" "}
+                    </ul>
                 </Message>
             )}
-            <FABButton onClick={toggleVisibility}>!</FABButton>
+            <FABButton onClick={toggleVisibility}>?</FABButton>
         </FABContainer>
     );
 }
