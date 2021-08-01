@@ -21,9 +21,7 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
         // eslint-disable-next-line arrow-body-style
         caches.match(event.request).then(() => {
-            return fetch(event.request).catch(() =>
-                console.log("Something went wrong")
-            );
+            return fetch(event.request).catch(() => caches.match("index.html"));
         })
     );
 });
