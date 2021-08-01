@@ -44,6 +44,20 @@ const Message = styled.div`
     border: 1px solid white;
     border-radius: 25px;
     border-bottom-right-radius: 0px;
+    ul {
+        list-style: none;
+    }
+    li:before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        display: block;
+        background: #ffffff;
+        position: relative;
+        left: -20px;
+        top: 20px;
+        border-radius: 33% 67% 65% 35% / 46% 62% 38% 54%;
+    }
 `;
 
 export default function FAB() {
