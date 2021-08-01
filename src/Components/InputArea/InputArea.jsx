@@ -15,6 +15,7 @@ const Sliders = styled.div`
 `;
 
 const ButtonContainer = styled.div`
+    margin-top: 2rem;
     display: grid;
     place-items: center;
 `;

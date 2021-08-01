@@ -15,6 +15,7 @@ const StyledMain = styled.main`
 const StyledHeader = styled.header`
     text-align: center;
     padding: 1rem 0;
+    font-size: 1.25rem;
 `;
 
 const GraphContainer = styled.div`
