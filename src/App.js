@@ -9,7 +9,7 @@ function App() {
             <Copyright
                 appName="BMI Tracker"
                 developer="Anmol Agrawal"
-                developerUrl="https://anmolagrawal.tech/"
+                developerUrl="https://anmolagrawal.dev/"
             />
         </div>
     );
